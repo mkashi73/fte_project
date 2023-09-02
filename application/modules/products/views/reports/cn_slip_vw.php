@@ -14,10 +14,11 @@
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
-		            Date: <?php 
+		            Generated Date: <?php 
                             $timestamp = time(); 
                             echo(date("F d, Y h:i:s A", $timestamp)); 
                             ?> <br />
+					Created Date: <?= $productRecord['E_DATE_TIME'] ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        
@@ -128,10 +129,11 @@
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
-		            Date: <?php 
+		            Generated Date: <?php 
                             $timestamp = time(); 
                             echo(date("F d, Y h:i:s A", $timestamp)); 
-                            ?><br />
+                            ?> <br />
+					Created Date: <?= $productRecord['E_DATE_TIME'] ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        
@@ -242,10 +244,11 @@
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
-		            Date: <?php 
+		            Generated Date: <?php 
                             $timestamp = time(); 
                             echo(date("F d, Y h:i:s A", $timestamp)); 
-                            ?><br />
+                            ?> <br />
+					Created Date: <?= $productRecord['E_DATE_TIME'] ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        
@@ -353,10 +356,11 @@
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
-		            Date: <?php 
+		            Generated Date: <?php 
                             $timestamp = time(); 
                             echo(date("F d, Y h:i:s A", $timestamp)); 
-                            ?><br />
+                            ?> <br />
+					Created Date: <?= $productRecord['E_DATE_TIME'] ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        

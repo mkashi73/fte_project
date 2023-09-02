@@ -386,11 +386,19 @@ class PrvController extends MX_Controller
 		{
 
 			$query = "	SELECT 
-						*				        
-						FROM payment_receipt_voucher
-
+						prv.*, us.FULL_NAME as created_by, usg.FULL_NAME as updated_by
+						FROM payment_receipt_voucher as prv
+						LEFT JOIN
+						users as us
+						ON
+						prv.E_USER_ID = us.USER_ID
+						
+						LEFT JOIN
+						users as usg
+						ON
+						prv.U_USER_ID = usg.USER_ID
 						WHERE
-						PRV_ID = " . $prvtId;
+						prv.PRV_ID = " . $prvtId;
 
 			$prvData = $this->common->getRecordByCustomQuery($query)[0];
 			$data = array(

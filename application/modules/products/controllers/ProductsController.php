@@ -823,6 +823,7 @@ class ProductsController extends MX_Controller
 				        p.CONSIGNEE_ZIP_CODE,
 				        p.CONSIGNEE_PHONE_NUMBER,
 				        p.QUANTITY,
+				        p.E_DATE_TIME,
 				        pc.PRODUCT_CONDITION_ID, 
 				        pc.PRODUCT_CONDITION,
 				        c.COUNTRY_ID,

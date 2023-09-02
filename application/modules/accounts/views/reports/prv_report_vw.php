@@ -15,7 +15,10 @@
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
 		            Date of creation:  <?= $prvRecord['E_DATE_TIME'] ?> <br />
-					Date of generation: <?= $prvRecord['U_DATE_TIME'] ?> <br />
+					Date of generation: <?php 
+                            $timestamp = time(); 
+                            echo(date("F d, Y h:i:s A", $timestamp)); 
+                            ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        
@@ -29,47 +32,52 @@
 				<td colspan="2"><h4 style="text-align: center; padding: 20px;">PAYMENT RECEIPT VOUCHER</h4></td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td  style="padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
+				<td  style="padding: 5px; width: 50%;">
+					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span> 	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
 				</td>
-				<td style="padding: 5px;">
+				<td style="padding: 5px; width: 50%;">
 					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['BRANCH_NAME'] ?></label>						
 				</td>
 				
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">					
-					<span  style="font-weight: bold; font-size: 18px;">Received with thanks from </span><label  style=" font-size: 18px;" id="lblShipperName"><?= $prvRecord['RECEIVED_FROM']; ?></label><br />					
+				<td colspan="2" style="width: 100%; padding: 5px;">					
+					<span  style="font-weight: bold; font-size: 18px;">Received with thanks from </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblShipperName"><?= $prvRecord['RECEIVED_FROM']; ?></label><br />					
 				</td>				
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">Received Amount: </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['RECEIVED_AMOUNT']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">Received Amount </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['RECEIVED_AMOUNT']; ?></label><br />															
 				</td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">On Account of </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['ACCOUNT_OF']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">On Account of </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['ACCOUNT_OF']; ?></label><br />															
 				</td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">Type of PRV: </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['PRV_TYPE']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">Type of PRV </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['PRV_TYPE']; ?></label><br />															
 				</td>
 			</tr>
 			<tr>
 				<td style="width: 100px; padding: 20px;">
-					<span style="font-weight: bold; font-size: 18px;">OFFICE COPY</span></label><br />															
+					<span style="font-weight: bold; font-size: 18px;">OFFICE COPY</span><br />		
+					<span  style="font-weight: bold; font-size: 10px;">
+						<strong>
+							Generated: <?= $prvRecord['created_by']; ?><br>
+							Updated: <?= $prvRecord['updated_by']; ?>
+						</strong>
+					</span>													
 				</td>
 				<td style="width: 600px;">
-					<span style="font-weight: bold; font-size: 18px;">Receiver Signature: </span></label><br />															
+					<span style="font-weight: bold; font-size: 18px;">Receiver Signature: </span><br />															
 				</td>
 			</tr>
 		</table>
 		
 		</div>
-		<span style="font-size: 8px; text-align: center;">Note: <strong>NOT INSURED - INSURANCE OFFERED BUT REFUSED SENDER RISK, NO CLAIM, NO TIME LIMIT</strong> <br /> <strong>Generated: <?= $prvRecord['E_USER_ID']; ?>,&nbsp;&nbsp;   Updated: <?= $prvRecord['U_USER_ID']; ?></strong></span>
+		<span style="font-size: 8px; text-align: center;">Note: <strong>NOT INSURED - INSURANCE OFFERED BUT REFUSED SENDER RISK, NO CLAIM, NO TIME LIMIT</strong>
 		
 	</div>
 	<!-- First CN Slip End-->
@@ -93,7 +101,10 @@
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
 		            Date of creation:  <?= $prvRecord['E_DATE_TIME'] ?> <br />
-					Date of generation: <?= $prvRecord['U_DATE_TIME'] ?> <br />
+					Date of generation: <?php 
+                            $timestamp = time(); 
+                            echo(date("F d, Y h:i:s A", $timestamp)); 
+                            ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
 		            Phone No: 091-2572727</p>        
@@ -107,46 +118,52 @@
 				<td colspan="2"><h4 style="text-align: center; padding: 20px;">PAYMENT RECEIPT VOUCHER</h4></td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td  style="padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
+				<td  style="padding: 5px; width: 50%;">
+					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span> 	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
 				</td>
-				<td style="padding: 5px;">
+				<td style="padding: 5px; width: 50%;">
 					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['BRANCH_NAME'] ?></label>						
 				</td>
+				
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">					
-					<span  style="font-weight: bold; font-size: 18px;">Received with thanks from </span><label  style=" font-size: 18px;" id="lblShipperName"><?= $prvRecord['RECEIVED_FROM']; ?></label><br />					
+				<td colspan="2" style="width: 100%; padding: 5px;">					
+					<span  style="font-weight: bold; font-size: 18px;">Received with thanks from </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblShipperName"><?= $prvRecord['RECEIVED_FROM']; ?></label><br />					
 				</td>				
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">Received Amount: </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['RECEIVED_AMOUNT']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">Received Amount </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['RECEIVED_AMOUNT']; ?></label><br />															
 				</td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">On Account of </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['ACCOUNT_OF']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">On Account of </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['ACCOUNT_OF']; ?></label><br />															
 				</td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td style="width: 600px; padding: 5px;">
-					<span style="font-weight: bold; font-size: 18px;">Type of PRV: </span><label  style=" font-size: 18px;" id="lblreceiverName"><?= $prvRecord['PRV_TYPE']; ?></label><br />															
+				<td colspan="2" style="width: 100%; padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">Type of PRV </span><label  style=" font-size: 18px; padding-left: 50px;" id="lblreceiverName"><?= $prvRecord['PRV_TYPE']; ?></label><br />															
 				</td>
 			</tr>
 			<tr>
 				<td style="width: 100px; padding: 20px;">
-					<span style="font-weight: bold; font-size: 18px;">CUSTOMER COPY</span></label><br />															
+					<span style="font-weight: bold; font-size: 18px;">CUSTOMER COPY</span><br />														
+					<span  style="font-weight: bold; font-size: 10px;">
+						<strong>
+							Generated: <?= $prvRecord['created_by']; ?><br>
+							Updated: <?= $prvRecord['updated_by']; ?>
+						</strong>
+					</span>
 				</td>
 				<td style="width: 600px;">
-					<span style="font-weight: bold; font-size: 18px;">Receiver Signature: </span></label><br />															
+					<span style="font-weight: bold; font-size: 18px;">Receiver Signature: </span><br />		
 				</td>
 			</tr>
 		</table>
 		
 		</div>
-		<span style="font-size: 8px; text-align: center;">Note: <strong>NOT INSURED - INSURANCE OFFERED BUT REFUSED SENDER RISK, NO CLAIM, NO TIME LIMIT</strong> <br /> <strong>Generated: <?= $prvRecord['E_USER_ID']; ?>,&nbsp;&nbsp;   Updated: <?= $prvRecord['U_USER_ID']; ?></strong></span>
+		<span style="font-size: 8px; text-align: center;">Note: <strong>NOT INSURED - INSURANCE OFFERED BUT REFUSED SENDER RISK, NO CLAIM, NO TIME LIMIT</strong>
 		
 	</div>
 	<!-- First CN Slip End-->
