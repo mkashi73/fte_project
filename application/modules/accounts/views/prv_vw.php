@@ -13,9 +13,9 @@
 						<h2>PRV Listing</h2>
 					</div>
 					<div class='col-md-4'>
-						<form id='search-product-cn-number' >
+						<form id='search-prv-by-id' >
 							<input type='text' name='prv_id' class='form-control' placeholder='Search Prv' />
-							<button type="submit" class='btn btn-primary btn-block mt-2 search-product'>Search Product</button>
+							<button type="submit" class='btn btn-primary btn-block mt-2 search-prv'>Search PRV</button>
 						</form>
 					</div>
 				</div>

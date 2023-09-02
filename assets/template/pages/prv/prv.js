@@ -275,3 +275,30 @@ $(document).on('click', '.delete-btn', function (e) {
     }
   })
 })
+
+
+$(document).on('submit', '#search-prv-by-id', function (e) {
+  e.preventDefault()
+  let page = $('.active').children().html() 
+  
+  if ( typeof page === "undefined" ) 
+  {
+    page = 1
+  }
+  $.ajax({
+    'url' : base_url + 'get/prv/page/' + page,
+    'data' : $(this).serializeArray(),
+    'method' : 'POST',
+    beforeSend : function() {
+      $('.search-prv').html('<i class="fa fa-spinner fa-spin"></i>Loading')
+    },
+    success : function ( res ) {
+      $('.search-prv').html('Search PRV')
+
+      let data = JSON.parse( res )
+
+      $(".prvList").html(data.PrvList);
+      $(".prvPaginationLink").html(data.PrvPaginationLink);
+    }
+  })
+})

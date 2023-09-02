@@ -1084,7 +1084,7 @@ $(document).on('submit', '#search-product-cn-number', function (e) {
   {
     page = 1
   }
-
+  console.log($(this).serializeArray());
   $.ajax({
     'url' : base_url + 'get/product/page/' + page,
     'data' : $(this).serializeArray(),
