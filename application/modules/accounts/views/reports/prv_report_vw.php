@@ -107,10 +107,12 @@
 				<td colspan="2"><h4 style="text-align: center; padding: 20px;">PAYMENT RECEIPT VOUCHER</h4></td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
-				<td colspan="2"  style="padding: 5px;">
+				<td  style="padding: 5px;">
 					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
 				</td>
-				
+				<td style="padding: 5px;">
+					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['BRANCH_NAME'] ?></label>						
+				</td>
 			</tr>
 			<tr style="border-bottom: 1px dotted;">
 				<td style="width: 600px; padding: 5px;">					
