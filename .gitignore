@@ -1,0 +1,32 @@
+.DS_Store
+application/config/database.php
+
+# local env files
+.env.local
+.env.*.local
+.env
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Editor directories and files
+.idea
+.vscode/*
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.pyc
+
+!.vscode/*.code-snippets
+
+# script
+/vuexy-scripts
+
+# Docs
+/docs/.temp
+*.pyc
+backend/__pycache__/models.cpython-39.pyc
