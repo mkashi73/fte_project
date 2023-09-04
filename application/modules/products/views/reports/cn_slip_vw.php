@@ -9,8 +9,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
@@ -124,8 +123,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
@@ -239,8 +237,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
@@ -351,8 +348,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">

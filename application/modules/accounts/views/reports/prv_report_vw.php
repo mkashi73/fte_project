@@ -9,8 +9,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
@@ -21,7 +20,7 @@
                             ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
-		            Phone No: 091-2572727</p>        
+		            Phone No: 091-2572828</p>        
 		        </td>
 		    </tr>
 		</table>
@@ -36,7 +35,7 @@
 					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span> 	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
 				</td>
 				<td style="padding: 5px; width: 50%;">
-					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['BRANCH_NAME'] ?></label>						
+					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['STATION_NAME'] ?></label>						
 				</td>
 				
 			</tr>
@@ -95,8 +94,7 @@
 		            
 		        </td>
 		        <td style="width: 150px;">
-		            <h5 style="color: black;">TOLL FREE</h5>
-            		<h5 style="color: black;">091 111 512 514</h5>
+		            
 		        </td>
 		        <td  style="width: 150px;">
 		            <p style="font-size: 10px;">
@@ -107,7 +105,7 @@
                             ?> <br />
 		            Website: https://fte.com.pk <br />
 		            Email: info@fte.com.pk<br />
-		            Phone No: 091-2572727</p>        
+		            Phone No: 091-2572828</p>        
 		        </td>
 		    </tr>
 		</table>
@@ -122,7 +120,7 @@
 					<span style="font-weight: bold; font-size: 18px;">PRV Number: </span> 	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['PRV_ID'] ?></label>						
 				</td>
 				<td style="padding: 5px; width: 50%;">
-					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['BRANCH_NAME'] ?></label>						
+					<span style="font-weight: bold; font-size: 18px;">Branch Name: </span>	<label  style=" font-size: 18px;" id="lblproductName"><?= $prvRecord['STATION_NAME'] ?></label>						
 				</td>
 				
 			</tr>
