@@ -121,7 +121,7 @@ class PrvController extends MX_Controller
             {	
 						
 				$data = array(
-					'BRANCH_NAME'			=>	$token['station_name'],
+					'STATION_NAME'			=>	$token['station_name'],
 					'RECEIVED_FROM	'			=>	$_POST['receivedFrom'],
 					'RECEIVED_AMOUNT	'			=>	$_POST['receivedAmount'],
 					'PRV_TYPE	'			=>	$_POST['prvType'],
@@ -413,6 +413,127 @@ class PrvController extends MX_Controller
 		{
 			echo json_encode( array( "code" => BAD_DATA, 'message' => $this->msg['auth_msg']['auth_error']) );
 		} // end of Role validation
+	}
+
+	public function PrvDetailView(){
+		if ( $this->common->checkUserRole( $this->tokenData['role_id'] ) ) 
+		{
+			$parent_menu = $this->getMenu;
+			
+			$tokenData = getTokenData('token');
+
+			
+			
+			$data = array(
+				"links"				=>	array(
+					"show_menu"		=> 	$parent_menu
+				),
+				"headerData"		=>	array(
+					"companyName"	=>	'FTE',
+					"pageName"		=>	'Product Manifest'
+				),
+				"users"				=>	$this->prv->getUsersDistinctData(),
+				"token"				=>	$tokenData,
+				"filepath"			=>	'product_manifest/product_manifest.js'
+			);
+
+			$this->load->view('common/header', $data);
+			$this->load->view('common/sidebar', $data);
+			$this->load->view('accounts/prv_detail_vw', $data);
+			$this->load->view('common/footer', $data);
+		}
+		else
+		{
+			echo json_encode( array( "code" => BAD_DATA, 'message' => $this->msg['auth_msg']['auth_error']) );
+		} // end of Role validation
+	}
+
+	public function GeneratePrvDetailReport()
+	{	
+		$tokenData = getTokenData('token');
+
+		if ( !empty ( $_POST['prv_id'] ) ) 
+		{
+			$prv_number = ' AND PRV_ID = "' . $_POST['prv_id'] . '"';
+		}
+		else
+		{
+			$prv_number = '';
+		}
+
+
+		if( !empty( $_POST['station'] ) ) 
+		{
+			$station_name = ' AND STATION_NAME = "' . $_POST['station']. '"';
+		}
+		else
+		{
+			$station_name = '';
+		}
+
+		if ( !empty ( $_POST ['fromDate'] ) ) 
+		{
+			$fromDate = getDateForDatabase ( $_POST ['fromDate'] );
+		}
+		else
+		{
+			$fromDate = '';
+		}
+
+		if ( !empty ( $_POST ['toDate'] ) ) 
+		{   
+			$toDate = getDateForDatabase ( $_POST ['toDate'] );
+		}
+		else
+		{
+			$toDate = '';
+		}
+
+		// FROM DATE
+		if ( !empty ( $fromDate ) && !empty ( $toDate ) ) 
+		{
+			$fromDate = getDateForDatabase( $fromDate );
+
+
+			$toFromDate = " AND ( E_DATE_TIME >  '{$fromDate} 00:00:00' AND E_DATE_TIME < DATE_ADD( '{$toDate} 23:59:59', INTERVAL 5 HOUR) )"; 
+		}
+		else
+		{
+			$toFromDate = '';
+			$fromDate = '';
+			$toDate = '';
+		}
+
+		
+		$query = "
+			SELECT 
+			*
+			FROM 
+			payment_receipt_voucher
+			where E_USER_ID  != ''
+			" .
+			$prv_number . 
+			$station_name .
+			$toFromDate;
+    
+    
+            
+			$data['result'] = $this->common->getRecordByCustomQuery( $query );
+
+			if ( !empty ( $data['result']) ){
+				$this->load->view('accounts/reports/prv_listing_report_vw', $data );
+			}
+			else 
+			{
+				echo json_encode ( 
+					array 
+					(
+						'code'	=>	403,
+						'message' => 'No record found'
+					)
+				);
+			}
+
 	}
 
 	

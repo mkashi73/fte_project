@@ -302,3 +302,11 @@ $(document).on('submit', '#search-prv-by-id', function (e) {
     }
   })
 })
+
+
+$(".generate-prv-report-btn").click(function() {
+  $("#generate-prv-report").attr(
+    "action",
+    base_url + "prv/report/generate"
+  );
+});

@@ -225,6 +225,8 @@ $route['company/delete'] = 'company/CompanyController/DeleteCompany';
 $route['company/data/get']	= 'company/CompanyController/GetCompanyData';
 
 
+
+
 /*************
 PRV ROUTES
 *************/
@@ -235,6 +237,10 @@ $route['prv/delete'] = 'accounts/PrvController/DeletePrv';
 $route['prv/data/get']	= 'accounts/PrvController/GetPrvData';
 $route['get/prv/page/(:any)'] = 'accounts/PrvController/getPrvPagination/$1';
 $route['prv/report/prv_report/(:any)'] = 'accounts/PrvController/ViewPrvReport/$1';
+
+$route['prv/report/view'] = 'accounts/PrvController/PrvDetailView';
+$route['prv/report/generate'] = 'accounts/PrvController/GeneratePrvDetailReport';
+
 
 
 

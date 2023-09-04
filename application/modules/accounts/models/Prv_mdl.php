@@ -83,7 +83,7 @@ class Prv_mdl extends CI_Model
 			
 			<tr>
 				<th>PRV ID</th>
-				<th>Branch Name</th>
+				<th>STATION Name</th>
 				<th>Received From</th>
 				<th>Received Amount</th>
 				<th>PRV Type</th>
@@ -105,7 +105,7 @@ class Prv_mdl extends CI_Model
 				
 				$output .=    "<tr>" 
 								. "<td>" . $row['PRV_ID'] ."</td>"
-								. "<td>" . $row['BRANCH_NAME'] ."</td>"
+								. "<td>" . $row['STATION_NAME'] ."</td>"
 								. "<td>" . $row['RECEIVED_FROM'] ."</td>"
 								. "<td>" . $row['RECEIVED_AMOUNT'] . "</td>" 
 								. "<td>" . $row['PRV_TYPE'] . "</td>"
@@ -147,5 +147,25 @@ class Prv_mdl extends CI_Model
 		$output .= "</table>";
 
 		return $output;
+	}
+
+
+	public function getUsersDistinctData () 
+	{
+		$query = "
+					SELECT DISTINCT STATION_NAME
+					FROM 
+					users WHERE STATION_NAME != ''";
+
+		$result = $this->db->query($query);
+
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result_array();
+		}
+		else
+		{	
+			return FALSE;
+		}
 	}
 }
