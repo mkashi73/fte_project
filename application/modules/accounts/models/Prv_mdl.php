@@ -95,14 +95,27 @@ class Prv_mdl extends CI_Model
 
 		$i = 1;
 
-		// $userId = $data['userData']['userId'];
+		$userId = $data['userData']['userId'];
 
 		if ( $query->num_rows() > 0 ) 
 		{
 			foreach ( $query->result_array() as $row ) 
 			{
-				
-				
+				if ( $userId == 1 )
+				{
+					$editButtonHtml = " <button type='button' class='btn btn-success edit-btn' style='margin:2%;' data-target='#update-prv-modal' data-toggle='modal'>
+											<i class='fas fa-pencil-alt'></i>
+											<input type='hidden' name='prvId' value='" . $row['PRV_ID'] . "'>
+										</button>";
+					$deleteButtonHtml = "<button type='button' class='btn btn-danger delete-btn' style='margin:2%;'>
+											<i class='fa fa-trash'></i>
+											<input type='hidden' name='prvId' value='" . $row['PRV_ID'] . "'>
+										</button>";
+				}
+				else{
+					$editButtonHtml = "";
+					$deleteButtonHtml ="";
+				}
 				$output .=    "<tr>" 
 								. "<td>" . $row['PRV_ID'] ."</td>"
 								. "<td>" . $row['STATION_NAME'] ."</td>"
@@ -113,11 +126,11 @@ class Prv_mdl extends CI_Model
 								. "<td>" . $row['E_DATE_TIME'] . "</td>"
 								. "<td>" . $row['U_DATE_TIME'] . "</td>"								
 								. "<td>
-									<div class='btn-group' role='group' aria-label='Basic example'>
-										<button type='button' class='btn btn-success edit-btn' style='margin:2%;' data-target='#update-prv-modal' data-toggle='modal'>
-											<i class='fas fa-pencil-alt'></i>
-											<input type='hidden' name='prvId' value='" . $row['PRV_ID'] . "'>
-										</button>
+									<div class='btn-group' role='group' aria-label='Basic example'>"
+										.
+										$editButtonHtml
+										.
+										"
 										<div class='dropdown' style='margin:2%;'>
 												<button class='btn btn-warning dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 													<i class='fas fa-eye'></i>
@@ -127,11 +140,11 @@ class Prv_mdl extends CI_Model
 															Download PRV
 													</a>													
 												</div><!-- dropdown-menu -->
-								            </div>
-										<button type='button' class='btn btn-danger delete-btn' style='margin:2%;'>
-											<i class='fa fa-trash'></i>
-											<input type='hidden' name='[prvId' value='" . $row['PRV_ID'] . "'>
-										</button>
+								            </div>"
+										.
+										$deleteButtonHtml
+										.
+										"
 									</div>
 								</td>"								
 							. "</tr>";	

@@ -22,12 +22,12 @@
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
                 <label class="form-control-label">Search by STATION <span class="tx-danger"></span></label>
-                <select name="station" class="form-control select2" data-placeholder="Select STATION">
+                <select name="station" class="form-control select2" data-placeholder="Select STATION" <?php if ($userId != 1) echo "disabled" ?>>
                   <option label="Select User"></option>
                   <?php
                   foreach( $users AS $userRecord) :
                   ?>
-                    <option value="<?= $userRecord['STATION_NAME'] ?>"><?= $userRecord['STATION_NAME'] ?></option>
+                    <option value="<?= $userRecord['STATION_NAME'] ?>" <?php if ($userRecord['STATION_NAME'] === $station_name && $userId != 1) echo 'selected="selected"'; ?>><?= $userRecord['STATION_NAME'] ?></option>
                   <?php
                   endforeach;
                   ?>             

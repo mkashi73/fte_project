@@ -221,17 +221,41 @@ class PrvController extends MX_Controller
 		$start = ($page - 1) * $config['per_page'];
 		
 		
-    			
-		$paginationData = array(
-			'db'		=>	array(
-				'select' => '*',
-				'limit'	 =>	$config['per_page'],
-				'start'	 =>	$start,
-				'table'	 =>	'payment_receipt_voucher',
-				'order_attribute' 	=> 'E_DATE_TIME',
-				'order_by' 			=> 'DESC'    					
-			),
-		);
+		if( $roleId == 1 )
+    	{
+			$paginationData = array(
+				'db'		=>	array(
+					'select' => '*',
+					'limit'	 =>	$config['per_page'],
+					'start'	 =>	$start,
+					'table'	 =>	'payment_receipt_voucher',
+					'order_attribute' 	=> 'E_DATE_TIME',
+					'order_by' 			=> 'DESC'  					
+				),
+
+				'userData' => array(
+					'userId' => getTokenData('token')['id']
+				)
+			);
+		}
+		else {
+			$paginationData = array(
+				'db'		=>	array(
+					'select' => '*',
+					'limit'	 =>	$config['per_page'],
+					'start'	 =>	$start,
+					'table'	 =>	'payment_receipt_voucher',
+					'order_attribute' 	=> 'E_DATE_TIME',
+					'order_by' 			=> 'DESC'  ,
+					'condition'			=>	array(
+						'payment_receipt_voucher.STATION_NAME'		=>	getTokenData('token')['station_name']
+					)   					
+				),
+				'userData' => array(
+					'userId' => getTokenData('token')['id']
+				)
+			);
+		}
 		
 
 		if ( !empty( $prvNumber ) ) 
@@ -434,7 +458,9 @@ class PrvController extends MX_Controller
 				),
 				"users"				=>	$this->prv->getUsersDistinctData(),
 				"token"				=>	$tokenData,
-				"filepath"			=>	'product_manifest/product_manifest.js'
+				"filepath"			=>	'product_manifest/product_manifest.js',
+				'userId' 			=> getTokenData('token')['id'],
+				'station_name' 			=> getTokenData('token')['station_name'],
 			);
 
 			$this->load->view('common/header', $data);
@@ -461,14 +487,20 @@ class PrvController extends MX_Controller
 			$prv_number = '';
 		}
 
-
-		if( !empty( $_POST['station'] ) ) 
-		{
-			$station_name = ' AND STATION_NAME = "' . $_POST['station']. '"';
+		if( $tokenData['role_id'] == 1 )
+    	{
+			if( !empty( $_POST['station'] ) ) 
+			{
+				$station_name = ' AND STATION_NAME = "' . $_POST['station']. '"';
+			}
+			else
+			{
+				$station_name = '';
+			}
 		}
 		else
 		{
-			$station_name = '';
+			$station_name = ' AND STATION_NAME = "' . $tokenData['station_name']. '"';
 		}
 
 		if ( !empty ( $_POST ['fromDate'] ) ) 
