@@ -397,6 +397,7 @@ class ProductManifestController extends MX_Controller
 					p.SHIPPER_ADDRESS,
 					p.SHIPPER_PHONE,
 					p.DESCRIPTION,
+					p.CONSIGNEE_AMOUNT,
 					p.BAG_NUMBER, 
 					p.CLUB_NUMBER,
 					p.CONSIGNEE_NAME,
@@ -461,6 +462,7 @@ class ProductManifestController extends MX_Controller
 				p.SHIPPER_ADDRESS, 
 				p.SHIPPER_PHONE,
 				p.DESCRIPTION,
+				p.CONSIGNEE_AMOUNT,
 				p.BAG_NUMBER, 
 				p.CLUB_NUMBER,
 				p.CONSIGNEE_ADDRESS, 
@@ -617,6 +619,8 @@ class ProductManifestController extends MX_Controller
 
 			// CLUB NUMBER
 			$spreadsheet->getActiveSheet()->setCellValue('C3', "Club #")->getStyle('C3')->applyFromArray($styleArray);
+
+			
 			
 			// SHIPPER NAME
 			$spreadsheet->getActiveSheet()->setCellValue('D3', "Shipper Name")->getStyle('D3')->applyFromArray($styleArray);
@@ -663,6 +667,12 @@ class ProductManifestController extends MX_Controller
 			
 			// EXTERNAL TRACKING NUMBER
 			$spreadsheet->getActiveSheet()->setCellValue('R3', "External Tracking")->getStyle('R3')->applyFromArray($styleArray);
+
+			// Amount
+			$spreadsheet->getActiveSheet()->setCellValue('S3', "Amount")->getStyle('S3')->applyFromArray($styleArray);
+
+			// Entry Date
+			$spreadsheet->getActiveSheet()->setCellValue('T3', "Created At")->getStyle('T3')->applyFromArray($styleArray);
 			
 			// $i = 4 because we have 3 rows before that
 			$i = 4;
@@ -688,6 +698,8 @@ class ProductManifestController extends MX_Controller
 				$spreadsheet->getActiveSheet()->setCellValue("P{$i}", "{$data['CONSIGNEE_ZIP_CODE']}")->getStyle("P{$i}")->applyFromArray($detaiStyleArray);
 				$spreadsheet->getActiveSheet()->setCellValue("Q{$i}", "{$data['CONSIGNEE_PHONE_NUMBER']}")->getStyle("Q{$i}")->applyFromArray($detaiStyleArray);
 				$spreadsheet->getActiveSheet()->setCellValue("R{$i}", "{$data['EXT_TRACKING_NUMBER']}")->getStyle("R{$i}")->applyFromArray($detaiStyleArray);
+				$spreadsheet->getActiveSheet()->setCellValue("S{$i}", "{$data['CONSIGNEE_AMOUNT']}")->getStyle("S{$i}")->applyFromArray($detaiStyleArray);
+				$spreadsheet->getActiveSheet()->setCellValue("T{$i}", "{$data['E_DATE_TIME']}")->getStyle("T{$i}")->applyFromArray($detaiStyleArray);
 				// debug($data);
 				$serialNo++;
 				$i++;
