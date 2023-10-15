@@ -145,4 +145,23 @@ class Expense_mdl extends CI_Model
 
 		return $output;
 	}
+
+	public function getUsersDistinctData () 
+	{
+		$query = "
+					SELECT DISTINCT STATION_NAME
+					FROM 
+					users WHERE STATION_NAME != ''";
+
+		$result = $this->db->query($query);
+
+		if ( $result->num_rows() > 0 )
+		{
+			return $result->result_array();
+		}
+		else
+		{	
+			return FALSE;
+		}
+	}
 }
