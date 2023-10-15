@@ -242,6 +242,20 @@ $route['prv/report/view'] = 'accounts/PrvController/PrvDetailView';
 $route['prv/report/generate'] = 'accounts/PrvController/GeneratePrvDetailReport';
 
 
+/*************
+PRV ROUTES
+*************/
+$route['expense'] = 'accounts/ExpenseController';
+$route['expense/add'] = 'accounts/ExpenseController/AddExpense';
+$route['expense/update'] = 'accounts/ExpenseController/UpdateExpense';
+$route['expense/delete'] = 'accounts/ExpenseController/DeleteExpense';
+$route['expense/data/get']	= 'accounts/ExpenseController/GetExpenseData';
+$route['get/expense/page/(:any)'] = 'accounts/ExpenseController/getExpensePagination/$1';
+$route['expense/report/expense_report/(:any)'] = 'accounts/ExpenseController/ViewExpenseReport/$1';
+
+$route['expense/report/view'] = 'accounts/ExpenseController/ExpenseDetailView';
+$route['expense/report/generate'] = 'accounts/ExpenseController/GenerateExpenseDetailReport';
+
 
 
 /*************
