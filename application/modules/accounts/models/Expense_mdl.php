@@ -131,11 +131,7 @@ class Expense_mdl extends CI_Model
 												<button class='btn btn-warning dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
 													<i class='fas fa-eye'></i>
 												</button>
-												<div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
-													<a class='dropdown-item' href='" . base_url('expense/report/expense_report/') . $row['EXPENSE_ID'] . "' target='_blank'>
-															Download Expense Report
-													</a>													
-												</div><!-- dropdown-menu -->
+												
 								            </div>"
 										.
 										$deleteButtonHtml
