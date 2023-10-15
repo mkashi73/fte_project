@@ -125,15 +125,7 @@ class Expense_mdl extends CI_Model
 									<div class='btn-group' role='group' aria-label='Basic example'>"
 										.
 										$editButtonHtml
-										.
-										"
-										<div class='dropdown' style='margin:2%;'>
-												<button class='btn btn-warning dropdown-toggle' type='button' id='dropdownMenuButton' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-													<i class='fas fa-eye'></i>
-												</button>
-												
-								            </div>"
-										.
+										.										
 										$deleteButtonHtml
 										.
 										"
