@@ -21,9 +21,9 @@
             
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
-                <label class="form-control-label">Search by STATION <span class="tx-danger"></span></label>
+                <label class="form-control-label">Search by Station <span class="tx-danger"></span></label>
                 <select name="station" class="form-control select2" data-placeholder="Select STATION" <?php if ($userId != 1) echo "disabled" ?>>
-                  <option label="Select User"></option>
+                  <option label="Select Station"></option>
                   <?php
                   foreach( $users AS $userRecord) :
                   ?>
@@ -34,6 +34,26 @@
                 </select>
               </div>
             </div><!-- col-4 -->
+
+            <div class="col-lg-4">
+              <div class="form-group mg-b-10-force">
+                <label class="form-control-label">Search by Account Head <span class="tx-danger"></span></label>
+                <select name="head" class="form-control select2" data-placeholder="Select Head">
+                  <option label="Select Head"></option>
+                  <option value="Deter Leadger ">Deter Leadger </option>
+                  <option value="DP">DP</option>
+                  <option value="Food">Food</option>
+                  <option value="Office Expense">Office Expense</option>
+                  <option value="Online">Online</option>
+                  <option value="Packing Material">Packing Material</option>
+                  <option value="Utility Bills">Utility Bills</option>
+                  <option value="Claim">Claim</option>
+                  <option value="Salary">Salary</option>
+                  <option value="Fuel">Fuel</option>
+                </select>
+              </div>
+            </div><!-- col-4 -->
+
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
                   <label class="form-control-label">From Date <span class="tx-danger"></span></label>

@@ -477,6 +477,15 @@ class ExpenseController extends MX_Controller
 			$expense_number = '';
 		}
 
+		if ( !empty ( $_POST['head'] ) ) 
+		{
+			$expense_type = ' AND EXPENSE_TYPE = "' . $_POST['head'] . '"';
+		}
+		else
+		{
+			$expense_type = '';
+		}
+
 		if( $tokenData['role_id'] == 1 )
     	{
 			if( !empty( $_POST['station'] ) ) 
@@ -536,6 +545,7 @@ class ExpenseController extends MX_Controller
 			" .
 			$expense_number . 
 			$station_name .
+			$expense_type .
 			$toFromDate;
     
     
