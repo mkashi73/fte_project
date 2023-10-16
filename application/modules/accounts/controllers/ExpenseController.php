@@ -6,6 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	Controller 	: Accounts
 	Date 		: 26/8/2023
 */
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class ExpenseController extends MX_Controller 
 {
@@ -444,11 +446,11 @@ class ExpenseController extends MX_Controller
 				),
 				"headerData"		=>	array(
 					"companyName"	=>	'FTE',
-					"pageName"		=>	'Product Manifest'
+					"pageName"		=>	'Expence'
 				),
 				"users"				=>	$this->expense->getUsersDistinctData(),
 				"token"				=>	$tokenData,
-				"filepath"			=>	'product_manifest/product_manifest.js',
+				"filepath"			=>	'expense/expense.js',
 				'userId' 			=> getTokenData('token')['id'],
 				'station_name' 			=> getTokenData('token')['station_name'],
 			);
@@ -566,8 +568,165 @@ class ExpenseController extends MX_Controller
 				);
 			}
 
-	}
+	}	
 
-	
-	
+	public function GenerateExpenseExcel()
+	{	
+		$tokenData = getTokenData('token');
+
+		if ( !empty ( $_POST['expense_id'] ) ) 
+		{
+			$expense_number = ' AND EXPENSE_ID = "' . $_POST['expense_id'] . '"';
+		}
+		else
+		{
+			$expense_number = '';
+		}
+
+		if ( !empty ( $_POST['head'] ) ) 
+		{
+			$expense_type = ' AND EXPENSE_TYPE = "' . $_POST['head'] . '"';
+		}
+		else
+		{
+			$expense_type = '';
+		}
+
+		if( $tokenData['role_id'] == 1 )
+    	{
+			if( !empty( $_POST['station'] ) ) 
+			{
+				$station_name = ' AND STATION_NAME = "' . $_POST['station']. '"';
+			}
+			else
+			{
+				$station_name = '';
+			}
+		}
+		else
+		{
+			$station_name = ' AND STATION_NAME = "' . $tokenData['station_name']. '"';
+		}
+
+		if ( !empty ( $_POST ['fromDate'] ) ) 
+		{
+			$fromDate = getDateForDatabase ( $_POST ['fromDate'] );
+		}
+		else
+		{
+			$fromDate = '';
+		}
+
+		if ( !empty ( $_POST ['toDate'] ) ) 
+		{   
+			$toDate = getDateForDatabase ( $_POST ['toDate'] );
+		}
+		else
+		{
+			$toDate = '';
+		}
+
+		// FROM DATE
+		if ( !empty ( $fromDate ) && !empty ( $toDate ) ) 
+		{
+			$fromDate = getDateForDatabase( $fromDate );
+
+
+			$toFromDate = " AND ( E_DATE_TIME >  '{$fromDate} 00:00:00' AND E_DATE_TIME < DATE_ADD( '{$toDate} 23:59:59', INTERVAL 5 HOUR) )"; 
+		}
+		else
+		{
+			$toFromDate = '';
+			$fromDate = '';
+			$toDate = '';
+		}
+
+		
+		$query = "
+			SELECT 
+			*
+			FROM 
+			expense
+			where E_USER_ID  != ''
+			" .
+			$expense_number . 
+			$station_name .
+			$expense_type .
+			$toFromDate;
+    
+    
+            
+			$data['result'] = $this->common->getRecordByCustomQuery( $query );
+
+			if ( !empty ( $data['result']) ){
+				$spreadsheet = new Spreadsheet();
+				$cell_name = "A1";
+
+				$styleArray = [
+					'font' => [
+						'bold' => true,
+					],
+					'borders' => [
+						'allBorders' => [
+							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+							'color' => ['argb' => '00000000'],
+						],
+					],
+				];
+
+				$detaiStyleArray = [
+					'borders' => [
+						'allBorders' => [
+							'borderStyle' => \PhpOffice\PhpSpreadsheet\Style\Border::BORDER_THIN,
+							'color' => ['argb' => '00000000'],
+						],
+					],
+				];
+				$spreadsheet->getActiveSheet()->getColumnDimension('A')->setAutoSize(true);
+				$spreadsheet->getActiveSheet()->getColumnDimension('B')->setAutoSize(true);
+				$spreadsheet->getActiveSheet()->getColumnDimension('C')->setAutoSize(true);
+				$spreadsheet->getActiveSheet()->getColumnDimension('D')->setAutoSize(true);
+				$spreadsheet->getActiveSheet()->getColumnDimension('E')->setAutoSize(true);
+				
+
+				$spreadsheet->getActiveSheet()->setCellValue('A1', "Expense ID")->getStyle('A1')->applyFromArray($styleArray);
+				$spreadsheet->getActiveSheet()->setCellValue('B1', "Expense Amount")->getStyle('B1')->applyFromArray($styleArray);
+				$spreadsheet->getActiveSheet()->setCellValue('C1', "Expense Type")->getStyle('C1')->applyFromArray($styleArray);				
+				$spreadsheet->getActiveSheet()->setCellValue('D1', "Station Name")->getStyle('D1')->applyFromArray($styleArray);				
+				$spreadsheet->getActiveSheet()->setCellValue('E1', "Expense Detail")->getStyle('E1')->applyFromArray($styleArray);				
+				
+				
+				$i = 2;
+				foreach( $data['result'] AS $data ) {
+					$spreadsheet->getActiveSheet()->setCellValue("A{$i}", "{$data['EXPENSE_ID']}")->getStyle("A{$i}")->applyFromArray($detaiStyleArray);
+					$spreadsheet->getActiveSheet()->setCellValue("B{$i}", "{$data['EXPENSE_AMOUNT']}")->getStyle("B{$i}")->applyFromArray($detaiStyleArray);
+					$spreadsheet->getActiveSheet()->setCellValue("C{$i}", "{$data['EXPENSE_TYPE']}")->getStyle("C{$i}")->applyFromArray($detaiStyleArray);
+					$spreadsheet->getActiveSheet()->setCellValue("D{$i}", "{$data['STATION_NAME']}")->getStyle("D{$i}")->applyFromArray($detaiStyleArray);
+					$spreadsheet->getActiveSheet()->setCellValue("E{$i}", "{$data['EXPENSE_DETAIL']}")->getStyle("E{$i}")->applyFromArray($detaiStyleArray);
+					$i++;
+				}
+
+				$writer = new Xlsx($spreadsheet);
+		
+				$filename = time();
+				
+				// debug($filename);
+
+				header('Content-Type: application/vnd.ms-excel');
+				header('Content-Disposition: attachment;filename="'. $filename .'.xlsx"'); 
+				header('Cache-Control: max-age=0');
+				
+				$writer->save('php://output'); // download file 
+			}
+			else 
+			{
+				echo json_encode ( 
+					array 
+					(
+						'code'	=>	403,
+						'message' => 'No record found'
+					)
+				);
+			}
+	}	
 }

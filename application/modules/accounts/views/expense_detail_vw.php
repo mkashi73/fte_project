@@ -83,6 +83,7 @@
           </div><!-- row -->
           <div class="form-layout-footer">
             <button type="submit" class="btn btn-primary bd-0 generate-expense-report-btn">Generate Expense Detail Report</button>
+            <button type="submit" class="btn btn-primary generate-excel-report">Generate Excel</button>
           </div>
         </div>
       </form>

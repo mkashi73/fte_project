@@ -274,7 +274,7 @@ $(document).on('click', '.delete-btn', function (e) {
       });
     }
   })
-})
+});
 
 
 $(document).on('submit', '#search-expense-by-id', function (e) {
@@ -301,12 +301,23 @@ $(document).on('submit', '#search-expense-by-id', function (e) {
       $(".expensePaginationLink").html(data.ExpensePaginationLink);
     }
   })
-})
+});
+
+$(".generate-excel-report").click(function() {
+  console.log("I am Excel");
+  $("#generate-expense-report").attr(
+    "action",
+    base_url + "expense/report/generate/excel"
+  );
+});
 
 
 $(".generate-expense-report-btn").click(function() {
+  console.log("I am PDF");
   $("#generate-expense-report").attr(
     "action",
     base_url + "expense/report/generate"
   );
 });
+
+

@@ -256,6 +256,9 @@ $route['expense/report/expense_report/(:any)'] = 'accounts/ExpenseController/Vie
 $route['expense/report/view'] = 'accounts/ExpenseController/ExpenseDetailView';
 $route['expense/report/generate'] = 'accounts/ExpenseController/GenerateExpenseDetailReport';
 
+$route['expense/report/generate/excel'] = 'accounts/ExpenseController/GenerateExpenseExcel';
+
+
 
 
 /*************
