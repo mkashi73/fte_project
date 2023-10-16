@@ -92,6 +92,15 @@ class ExpenseController extends MX_Controller
 				                	'required' => 'You must provide a %s'
 			                	)
 							),
+							array 
+				        	(
+				            	'field' => 'expenseDetail',
+				                'label' => 'Expense Detail',
+				                'rules' => 'required',
+				                'errors' => array (
+				                	'required' => 'You must provide a %s'
+			                	)
+							),
 							
 						);
 			$this->form_validation->set_rules($config);
@@ -107,7 +116,7 @@ class ExpenseController extends MX_Controller
 					'STATION_NAME'			=>	$token['station_name'],
 					'EXPENSE_AMOUNT'			=>	$_POST['expenseAmount'],
 					'EXPENSE_TYPE'			=>	$_POST['expenseType'],
-										
+					'EXPENSE_DETAIL'			=>	$_POST['expenseDetail'],										
 					'E_USER_ID'					=>	$token['id'],
 					'E_DATE_TIME'				=>	getDateOffset()
 				);	
@@ -313,6 +322,7 @@ class ExpenseController extends MX_Controller
 					'record'	=>	array (						
 						'EXPENSE_AMOUNT'		=>	$_POST['expenseAmount'],
 						'EXPENSE_TYPE'	=>	$_POST['expenseType'],
+						'EXPENSE_DETAIL'	=>	$_POST['expenseDetail'],
 						'U_USER_ID'			=>	$token['id'],
 						'U_DATE_TIME'		=>	getDateOffset()
 					),

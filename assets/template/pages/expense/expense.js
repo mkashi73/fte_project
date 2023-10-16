@@ -123,6 +123,7 @@ $(document).on('click', '.edit-btn', function (e) {
       {
         $('.updateExpenseAmount').val( data.expenseData.EXPENSE_AMOUNT);
         $('.updateExpenseType').val( data.expenseData.EXPENSE_TYPE);
+        $('.updateExpenseDetail').val( data.expenseData.EXPENSE_DETAIL);
         $('.updateexpenseId').val( data.expenseData.EXPENSE_ID);
       }
       else

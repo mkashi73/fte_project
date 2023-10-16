@@ -86,6 +86,7 @@ class Expense_mdl extends CI_Model
 				<th>STATION Name</th>
 				<th>Expense Amount</th>
 				<th>Expense Type</th>
+				<th>Expense Detail</th>
 				<th>Create Time</th>
 				<th>Update Time</th>
 				<th>Action</th>
@@ -119,6 +120,7 @@ class Expense_mdl extends CI_Model
 								. "<td>" . $row['STATION_NAME'] ."</td>"
 								. "<td>" . $row['EXPENSE_AMOUNT'] ."</td>"
 								. "<td>" . $row['EXPENSE_TYPE'] . "</td>" 
+								. "<td>" . $row['EXPENSE_DETAIL'] . "</td>" 
 								. "<td>" . $row['E_DATE_TIME'] . "</td>"
 								. "<td>" . $row['U_DATE_TIME'] . "</td>"								
 								. "<td>

@@ -57,7 +57,14 @@
 							<div class="col-lg-6 mg-t-20 mg-lg-t-0">
 								<div class="form-group">
 									<label style="color: #000000de;">Expense Amount</label>
-									<input class="form-control" type="text" name="expenseAmount" placeholder="Received From" required>
+									<input class="form-control" type="text" name="expenseAmount" placeholder="Expense Amount" required>
+								</div>
+							</div><!-- col-4 -->
+
+							<div class="col-lg-6 mg-t-20 mg-lg-t-0">
+								<div class="form-group">
+									<label style="color: #000000de;">Expense Detail</label>
+									<input class="form-control" type="text" name="expenseDetail" placeholder="Expense Detail" required>
 								</div>
 							</div><!-- col-4 -->
 							
@@ -116,6 +123,13 @@
 								<div class="form-group">
 									<label style="color: #000000de;">Expense Amount</label>
 									<input class="form-control updateExpenseAmount" type="text" name="expenseAmount" placeholder="Received From" required>
+								</div>
+							</div><!-- col-4 -->
+
+							<div class="col-lg-6 mg-t-20 mg-lg-t-0">
+								<div class="form-group">
+									<label style="color: #000000de;">Expense Detail</label>
+									<input class="form-control updateExpenseDetail" type="text" name="expenseDetail" placeholder="Expense Detail" required>
 								</div>
 							</div><!-- col-4 -->
 							
