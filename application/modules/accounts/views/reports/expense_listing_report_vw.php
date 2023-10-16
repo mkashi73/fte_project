@@ -680,6 +680,9 @@ tr:nth-child(even) {
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 9px;"><strong>Expense Type</strong></span>
 				</td>
+				<td style="padding: 2px; width: 300px;">
+					<span style="font-size: 9px;"><strong>Expense Detail</strong></span>
+				</td>
 				<td style="padding: 2px; width: 200px;">
 					<span style="font-size: 9px;"><strong>Entry Time</strong></span>
 				</td>
@@ -706,6 +709,9 @@ tr:nth-child(even) {
 				</td>
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 10px;"><?= $record['EXPENSE_TYPE'] ?></span>
+				</td>
+				<td style="padding: 2px; width: 300px;">
+					<span style="font-size: 10px;"><?= $record['EXPENSE_DETAIL'] ?></span>
 				</td>
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 10px;"><?= $record['E_DATE_TIME'] ?></span>
