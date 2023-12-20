@@ -59,3 +59,10 @@ $(".generate-manifest-btn").click(function() {
     base_url + "product/manifest/generate"
   );
 });
+
+$(".generate-loadsheet").click(function() {
+  $("#generate-product-manifest").attr(
+    "action",
+    base_url + "product/loadsheet/generate/excel"
+  );
+});

@@ -213,6 +213,7 @@ $route['product/manifest/report'] = 'products/ProductManifestController/Generate
 
 // Downlaod Menifest in Excel
 $route['product/manifest/generate/excel'] = 'products/ProductManifestController/GenerateManifestExcel';
+$route['product/loadsheet/generate/excel'] = 'products/ProductManifestController/GenerateLoadsheetExcel';
 $route['product/manifest/generate/excel2'] = 'products/ProductManifestController/GenerateManifestExcel2';
 
 /*************

@@ -74,6 +74,7 @@
           <div class="form-layout-footer">
             <button type="submit" class="btn btn-primary bd-0 generate-manifest-btn">Generate Manifist</button>
             <button type="submit" class="btn btn-primary generate-excel-report">Generate Manifist Excel</button>
+            <button type="submit" class="btn btn-primary generate-loadsheet">Generate Loadsheet</button>
           </div>
         </div>
       </form>
