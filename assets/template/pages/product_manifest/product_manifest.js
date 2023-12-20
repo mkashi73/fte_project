@@ -45,6 +45,15 @@
 //   });
 // })
 
+
+$(".generate-loadsheet").click(function() {
+  $("#generate-product-manifest").attr(
+    "action",
+    base_url + "product/loadsheet/generate/excel"
+  );
+});
+
+
 $(".generate-excel-report").click(function() {
   $("#generate-product-manifest").attr(
     "action",
@@ -60,9 +69,4 @@ $(".generate-manifest-btn").click(function() {
   );
 });
 
-$(".generate-loadsheet").click(function() {
-  $("#generate-product-manifest").attr(
-    "action",
-    base_url + "product/loadsheet/generate/excel"
-  );
-});
+
