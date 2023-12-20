@@ -46,7 +46,7 @@
 // })
 
 
-$(".generate-loadsheet").click(function() {
+$(".generate-loadsheet-excel").click(function() {
   $("#generate-product-manifest").attr(
     "action",
     base_url + "product/loadsheet/generate/excel"
