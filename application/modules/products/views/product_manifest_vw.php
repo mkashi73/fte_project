@@ -8,7 +8,7 @@
       <h6 class="slim-pagetitle">Reports</h6>
     </div><!-- slim-pageheader -->
     <div class="section-wrapper">
-      <form id="generate-product-manifest" action="<?= base_url('product/manifest/generate') ?>" method="POST" target="_blank">
+      <form id="generate-product-manifest"  method="POST" target="_blank">
         <label class="section-title">Generate Manifist</label> <br />          
         <div class="form-layout">
           <div class="row mg-b-25">
