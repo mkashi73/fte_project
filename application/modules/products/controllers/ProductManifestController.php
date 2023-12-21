@@ -758,7 +758,7 @@ class ProductManifestController extends MX_Controller
 		// UK All Countries
 		else if ( $_POST['countryId'] == 01 )
 		{
-			$countryQuery = "p.CONSIGNEE_COUNTRY_ID IN ( '182', '15', '163', '117', '150', '99', '169', '231', '42', '93', '208', '218', '187', '216', '221', '241', '27', '26', '23', '55', '56', '68', '80', '98', '105', '110', '172')";
+			$countryQuery = "";
 		}
 		else
 		{
