@@ -818,7 +818,7 @@ class ProductManifestController extends MX_Controller
 				|| !empty ( $toDate )
 			) 
 		{
-			$whereClause = ' WHERE ';
+			$whereClause = ' WHERE p.E_DATE_TIME != ""';
 		}
 		else
 		{
