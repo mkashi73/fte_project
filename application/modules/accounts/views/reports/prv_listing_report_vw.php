@@ -676,9 +676,12 @@ tr:nth-child(even) {
 				</td>
 				<td style="padding: 2px; width: 100px;">
 					<span style="font-size: 9px;"><strong>Received From</strong></span>
-				</td>
+				</td>				
 				<td style="padding: 2px; width: 200px;">
 					<span style="font-size: 9px;"><strong>Received Amount</strong></span>
+				</td>
+				<td style="padding: 2px; width: 100px;">
+					<span style="font-size: 9px;"><strong>On Account Of</strong></span>
 				</td>
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 9px;"><strong>PRV Type</strong></span>
@@ -709,6 +712,9 @@ tr:nth-child(even) {
 				</td>
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 10px;"><?= $record['RECEIVED_AMOUNT'] ?></span>
+				</td>
+				<td style="padding: 2px; width: 300px;">
+					<span style="font-size: 10px;"><?= $record['ACCOUNT_OF'] ?></span>
 				</td>
 				<td style="padding: 2px; width: 300px;">
 					<span style="font-size: 10px;"><?= $record['PRV_TYPE'] ?></span>
