@@ -50,6 +50,9 @@
                   <option value="Claim">Claim</option>
                   <option value="Salary">Salary</option>
                   <option value="Fuel">Fuel</option>
+                  <option value="UK Payment">UK Payment</option>
+                  <option value="USA Payment">USA Payment</option>
+                  <option value="Creditor">Creditor</option>
                 </select>
               </div>
             </div><!-- col-4 -->
