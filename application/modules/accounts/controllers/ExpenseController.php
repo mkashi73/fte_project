@@ -28,14 +28,27 @@ class ExpenseController extends MX_Controller
 		{
 			$parent_menu = $this->getMenu;
 
-			$expenseTable = array(
-				'select'			=> 	'*',
-				'table'				=> 	'expense',
-				'order_attribute'	=>	'E_DATE_TIME',
-				'order_by'			=>	'ASC'
-				
-
-			);
+			if( $roleId != 1 ) 
+			{
+				$expenseTable = array(
+					'select'			=> 	'*',
+					'table'				=> 	'expense',
+					'order_attribute'	=>	'E_DATE_TIME',
+					'order_by'			=>	'DESC',
+					'condition'			=>	array(
+						'expense.E_USER_ID'		=>	getTokenData('token')['id']
+					)				
+				);
+			}
+			else
+			{
+				$expenseTable = array(
+					'select'			=>	'*',
+					'table'	 			=>	'expense',
+					'order_attribute' 	=>  'expense.E_DATE_TIME',
+					'order_by' 			=>  'DESC'							
+				);
+			}
 			// to get data in dropdown	// 
 			$data = array(
 				"links"				=>	array(
@@ -152,13 +165,27 @@ class ExpenseController extends MX_Controller
 			$expenseNumber = $_POST['expense_id'];
 		}
 		
-		
-		$expenseTable = array(
-						'select'			=>	'*',
-						'table'	 			=>	'expense',
-						'order_attribute' 	=>  'expense.E_DATE_TIME',
-						'order_by' 			=>  'DESC'							
-					);
+		if( $roleId != 1 ) 
+		{
+			$expenseTable = array(
+							'select'			=>	'*',
+							'table'	 			=>	'expense',
+							'order_attribute' 	=>  'expense.E_DATE_TIME',
+							'order_by' 			=>  'DESC',
+							'condition'			=>	array(
+								'expense.E_USER_ID'		=>	getTokenData('token')['id']
+							)							
+						);
+		}
+		else
+		{
+			$expenseTable = array(
+				'select'			=>	'*',
+				'table'	 			=>	'expense',
+				'order_attribute' 	=>  'expense.E_DATE_TIME',
+				'order_by' 			=>  'DESC'							
+			);
+		}
 		
     		
 

@@ -25,15 +25,28 @@ class PrvController extends MX_Controller
 		if ( $this->common->checkUserRole( $roleId ) ) 
 		{
 			$parent_menu = $this->getMenu;
+			if( $roleId != 1 ) 
+			{
+				$prvTable = array(
+					'select'			=> 	'*',
+					'table'				=> 	'payment_receipt_voucher',
+					'order_attribute'	=>	'E_DATE_TIME',
+					'order_by'			=>	'DESC',
+					'condition'			=>	array(
+						'payment_receipt_voucher.E_USER_ID'		=>	getTokenData('token')['id']
+					)				
 
-			$prvTable = array(
-				'select'			=> 	'*',
-				'table'				=> 	'payment_receipt_voucher',
-				'order_attribute'	=>	'E_DATE_TIME',
-				'order_by'			=>	'ASC'
-				
-
-			);
+				);
+			}
+			else
+			{
+				$prvTable = array(
+					'select'			=> 	'*',
+					'table'				=> 	'payment_receipt_voucher',
+					'order_attribute'	=>	'E_DATE_TIME',
+					'order_by'			=>	'DESC'
+				);
+			}
 			// to get data in dropdown	// 
 			$data = array(
 				"links"				=>	array(
@@ -159,13 +172,27 @@ class PrvController extends MX_Controller
 			$prvNumber = $_POST['prv_id'];
 		}
 		
-		
-		$prvTable = array(
-						'select'			=>	'*',
-						'table'	 			=>	'payment_receipt_voucher',
-						'order_attribute' 	=>  'payment_receipt_voucher.E_DATE_TIME',
-						'order_by' 			=>  'DESC'							
-					);
+		if( $roleId == 1 ) 
+		{
+			$prvTable = array(
+				'select'			=>	'*',
+				'table'	 			=>	'payment_receipt_voucher',
+				'order_attribute' 	=>  'payment_receipt_voucher.E_DATE_TIME',
+				'order_by' 			=>  'DESC'						
+			);
+		}
+		else
+		{
+			$prvTable = array(
+				'select'			=>	'*',
+				'table'	 			=>	'payment_receipt_voucher',
+				'order_attribute' 	=>  'payment_receipt_voucher.E_DATE_TIME',
+				'order_by' 			=>  'DESC',
+				'condition'			=>	array(
+					'payment_receipt_voucher.E_USER_ID'		=>	getTokenData('token')['id']
+				)						
+			);
+		}
 		
     		
 

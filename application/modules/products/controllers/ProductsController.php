@@ -312,7 +312,7 @@ class ProductsController extends MX_Controller
 			$cnNumber = $_POST['cn_number'];
 		}
 		
-		if( getTokenData('token')['id'] != 1 )
+		if( getTokenData('token')['id'] != 1 && getTokenData('token')['id'] != 51 )
 		{
     		if( $roleId != 6 ) 
     		{
@@ -414,7 +414,7 @@ class ProductsController extends MX_Controller
 
 		$start = ($page - 1) * $config['per_page'];
 		
-		if( getTokenData('token')['id'] != 1 ) 
+		if( getTokenData('token')['id'] != 1  && getTokenData('token')['id'] != 51 ) 
 		{
     		if( $roleId != 6 )
     		{
