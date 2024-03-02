@@ -28,7 +28,8 @@ function authorize( $t_id, $email_address, $password_value, $service_name, $cook
 
   $condition = array ( 
                         'EMAIL_ADDRESS' => $email_address, 
-                        'ENCRYPTED_PWD' => $password_value 
+                        'ENCRYPTED_PWD' => $password_value, 
+                        'IS_ACTIVE' => 1 
                      );
 
   // getData() accepts tablename, condition or 's'
