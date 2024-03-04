@@ -22,7 +22,7 @@
             <div class="col-lg-4">
               <div class="form-group mg-b-10-force">
                 <label class="form-control-label">Search by STATION <span class="tx-danger"></span></label>
-                <select name="station" class="form-control select2" data-placeholder="Select STATION" <?php if ($userId != 1) echo "disabled" ?>>
+                <select name="station" class="form-control select2" data-placeholder="Select STATION" <?php if ($userId != 1 && $userId != 51) echo "disabled" ?>>
                   <option label="Select User"></option>
                   <?php
                   foreach( $users AS $userRecord) :
