@@ -30,7 +30,7 @@ class ProductManifestController extends MX_Controller
 			$tokenData = getTokenData('token');
 
 			// $this->debug(getTokenData('token'));
-			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23 )
+			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23 || $tokenData['id'] == 51 )
 			{
 				$userDbData = array(
 					'select'	=> 	'*',
@@ -173,7 +173,7 @@ class ProductManifestController extends MX_Controller
 			) 
 		{
 
-			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23  ) 
+			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23 || $tokenData['id'] == 51  ) 
 			{
 				$query = "
 					SELECT 
@@ -385,7 +385,7 @@ class ProductManifestController extends MX_Controller
 			) 
 		{
 
-			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23  ) 
+			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23 || $tokenData['id'] == 51 ) 
 			{
 				$query = "
 					SELECT 
@@ -835,7 +835,7 @@ class ProductManifestController extends MX_Controller
 			) 
 		{
 
-			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23  ) 
+			if ( $tokenData['id'] == 1 || $tokenData['id'] == 21 || $tokenData['id'] == 22 || $tokenData['id'] == 23 || $tokenData['id'] == 51 ) 
 			{
 				$query = "
 				SELECT 
