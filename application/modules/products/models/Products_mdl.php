@@ -109,6 +109,10 @@ class Products_mdl extends CI_Model
 											<i class='fas fa-pencil-alt'></i>
 											<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
 										</button>";
+					$deleteButtonHtml = "<button type='button' class='btn btn-danger delete-btn' style='margin:2%;'>
+											<i class='fa fa-trash'></i>
+											<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
+										</button>";
 				}
 				else
 				{
@@ -118,6 +122,7 @@ class Products_mdl extends CI_Model
     											<i class='fas fa-pencil-alt'></i>
     											<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
     										</button>";
+						$deleteButtonHtml = "";
     				}
     				else
     				{
@@ -127,6 +132,7 @@ class Products_mdl extends CI_Model
         											<i class='fas fa-pencil-alt'></i>
         											<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
         										</button>";
+							$deleteButtonHtml = "";
         				}
         				else
         				{
@@ -136,10 +142,12 @@ class Products_mdl extends CI_Model
             											<i class='fas fa-pencil-alt'></i>
             											<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
             										</button>";
+								$deleteButtonHtml = "";
             				}
             				else
             				{
             					$editButtonHtml = "";
+								$deleteButtonHtml = "";
             				}
         				}
     				}
@@ -179,12 +187,10 @@ class Products_mdl extends CI_Model
 															Terms and Cond
 													</a>
 												</div><!-- dropdown-menu -->
-								            </div><!-- dropdown -->
-										  	<button type='button' class='btn btn-danger delete-btn' style='margin:2%;'>
-										  		<i class='fa fa-trash'></i>
-												<input type='hidden' name='productId' class='productId' value='" . $row['PRODUCT_ID'] . "'>
-										  	</button>
-										</div>
+								            </div><!-- dropdown -->" . 
+											$deleteButtonHtml .
+										  	
+										"</div>
 									</td>"
 							. "</tr>";	
 				

@@ -64,7 +64,7 @@
 							<select class="form-control" name="status" data-placeholder="Select Status" required="required">
 							  <option label="Choose Select Status"></option>
 							  <option value="1">Active</option>
-							  <option value="0">InActive</option>
+							  <option value="2">InActive</option>
 							</select>
 						  </div>
 						</div>
@@ -132,7 +132,7 @@
 							<select id="updateStatus" class="form-control" name="status" data-placeholder="Select Status" required="required">
 							  <option label="Choose Select Status"></option>
 							  <option value="1">Active</option>
-							  <option value="0">In Active</option>
+							  <option value="2">In Active</option>
 							</select>
 						  </div>
 						</div>
