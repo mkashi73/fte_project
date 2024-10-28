@@ -8,8 +8,8 @@
 		</div><!-- slim-body -->
 		<script type="text/javascript">let base_url = "<?= base_url(); ?>";</script>
 		<!-- jquery js -->
-	    <script src="<?= base_url(); ?>assets/lib/jquery/js/jquery.js"></script>
-		<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+	    <!-- <script src="<?= base_url(); ?>assets/lib/jquery/js/jquery.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<!-- Moment JS for datepicker -->
 	    <script src="<?= base_url(); ?>assets/lib/moment/js/moment.js"></script>
 	    <!-- jQuery UI -->
@@ -30,7 +30,9 @@
       <script src="<?= base_url(); ?>assets/lib/dropzone/dropzone.js"></script>
       
       	<!-- select 2 JS -->
-      	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+      	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
       	<!-- custom js -->
 	    <script src="<?= base_url(); ?>assets/template/pages/<?= $filepath; ?>"></script>
 	    <!-- slim js -->
