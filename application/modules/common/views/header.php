@@ -54,7 +54,7 @@
         })(window,document,'script','dataLayer','GTM-P26RTTN');</script>
         <!-- End Google Tag Manager -->
 
-        <script type='text/javascript'>
+        <!-- <script type='text/javascript'>
           
             goog_snippet_vars = function() {
               var w = window;
@@ -80,10 +80,10 @@
             }
           }
         
-        </script> 
+        </script>  -->
         </head>
       <body>
-        <!-- Google Tag Manager (noscript) -->
+        <!-- Google Tag Manager (noscript) 
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P26RTTN"
         height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->

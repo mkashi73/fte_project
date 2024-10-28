@@ -80,7 +80,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force parsley-input" id="scWrapper">
 						      	<label style="color: #000000de;">Shipper Country (Required)</label>
-						      	<select class="form-control countrySearch recieverCountrySearch" id="GetCountry"name="shipperCountryId" data-parsley-class-hanlder="#scWrapper" required>
+						      	<select class="form-control recieverCountrySearch" id="GetCountry" name="shipperCountryId" data-parsley-class-hanlder="#scWrapper" required>
 								  	<option label="Select Country"></option>
 								  	<?php foreach( $getCountry as $country) : ?>
 									<option value="<?= $country['COUNTRY_ID'] ?>"> <?= $country['COUNTRY']; ?></option>							  		
@@ -93,7 +93,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force parsley-input" id="statewrapper">
 						      	<label style="color: #000000de; " >Shipper State (Required)</label>
-								<select class="form-control stateSearch recieverStateSearch" name="shipperStateId" id="GetState" data-parsley-class-hanlder="#statewrapper" required>
+								<select class="form-control  recieverStateSearch" name="shipperStateId" id="GetState" data-parsley-class-hanlder="#statewrapper" required>
 								</select>
 						  </div>				  
 						</div><!-- col-4 -->
@@ -102,7 +102,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force parsley-input" id="cityWrapper">
 						      <label style="color: #000000de;">Shipper City (Required)</label>
-								<select class="form-control citySearch receiverCitySearch" name="shipperCityId" id="GetCity" data-parsley-class-hanlder="#cityWrapper" required>
+								<select class="form-control  receiverCitySearch" name="shipperCityId" id="GetCity" data-parsley-class-hanlder="#cityWrapper" required>
 								</select>
 						  </div>				  
 						</div><!-- col-4 -->
@@ -183,7 +183,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force  parsley-input" id="ccWrapper">
 						      	<label style="color: #000000de;">Consignee Country (Required)</label>
-						      	<select class="form-control countrySearch senderCountrySearch" name="consigneeCountryId"  data-parsley-class-hanlder="#ccWrapper" required>
+						      	<select class="form-control  senderCountrySearch" name="consigneeCountryId"  data-parsley-class-hanlder="#ccWrapper" required>
 								  	<option label="Select Country"></option>
 								  	<?php foreach( $getCountry as $country) : ?>
 									<option value="<?= $country['COUNTRY_ID'] ?>"> <?= $country['COUNTRY']; ?></option>							  		
@@ -196,7 +196,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force parsley-input" id="cstateWrapper">
 						      	<label style="color: #000000de;">Consignee State (Required)</label>
-								<select class="form-control stateSearch senderStateSearch" name="consigneeStateId"  data-parsley-class-hanlder="#cstateWrapper" required>
+								<select class="form-control  senderStateSearch" name="consigneeStateId"  data-parsley-class-hanlder="#cstateWrapper" required>
 								</select>
 						  </div>				  
 						</div><!-- col-4 -->
@@ -205,7 +205,7 @@
 						<div class="col-md-4">
 						  <div class="form-group mg-md-l--1 bd-t-0-force parsley-select" id="consgcityWrapper">
 						      	<label style="color: #000000de;">Consignee City (Required)</label>
-								<select class="form-control stateSearch senderCitySearch" name="consigneeCityId"  data-parsley-class-handler="#consgcityWrapper" required>
+								<select class="form-control  senderCitySearch" name="consigneeCityId"  data-parsley-class-handler="#consgcityWrapper" required>
 								</select>
 						  </div>				  
 						</div><!-- col-4 -->
