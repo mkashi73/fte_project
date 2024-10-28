@@ -30,9 +30,7 @@
         <link href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" rel="stylesheet">  
 
         <!-- Select 2 CSS -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
-
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" /> -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 
         <link href="<?= base_url(); ?>assets/lib/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet">
         <!-- Custom Css -->
