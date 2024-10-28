@@ -9,7 +9,7 @@
 		<script type="text/javascript">let base_url = "<?= base_url(); ?>";</script>
 		<!-- jquery js -->
 	    <script src="<?= base_url(); ?>assets/lib/jquery/js/jquery.js"></script>
-		<!-- <script src="//code.jquery.com/jquery-2.2.1.min.js"></script> -->
+		<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 		<!-- Moment JS for datepicker -->
 	    <script src="<?= base_url(); ?>assets/lib/moment/js/moment.js"></script>
 	    <!-- jQuery UI -->
