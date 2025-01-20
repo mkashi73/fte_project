@@ -30,7 +30,9 @@
       <script src="<?= base_url(); ?>assets/lib/dropzone/dropzone.js"></script>
       
       	<!-- select 2 JS -->
-      	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+      	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script> -->
+		<script src="<?= base_url(); ?>assets/lib/jquery/js/select2.min.js"></script>
+
       	<!-- custom js -->
 	    <script src="<?= base_url(); ?>assets/template/pages/<?= $filepath; ?>"></script>
 	    <!-- slim js -->
